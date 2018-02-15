@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.billist_app_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         Button newBill = findViewById(R.id.btnNewBill);
         Button myBillist = findViewById(R.id.btnMyBillist);
 
