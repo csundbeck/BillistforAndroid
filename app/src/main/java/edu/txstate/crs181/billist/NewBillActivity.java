@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class NewBillActivity extends AppCompatActivity {
 
@@ -17,11 +20,38 @@ public class NewBillActivity extends AppCompatActivity {
         final EditText billAmount = findViewById(R.id.txtBillAmount);
         final EditText tipPercentage = findViewById(R.id.txtTipPercentage);
         final EditText tipAmount = findViewById(R.id.txtTipAmount);
-        final EditText totalBill = findViewById(R.id.txtTotalBill);
+        final TextView totalBill = findViewById(R.id.txtTotalBill);
+        final SeekBar tipBar = findViewById(R.id.skbTipBar);
 
         Button saveBill = findViewById(R.id.btnSaveBill);
         Button calculateBill = findViewById(R.id.btnCalculateBill);
         Button clear = findViewById(R.id.btnClear);
+
+        //Displaying tipBar value
+        tipBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        //Calculate Button
+        calculateBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         //Save Bill button
         saveBill.setOnClickListener(new View.OnClickListener() {
@@ -31,13 +61,6 @@ public class NewBillActivity extends AppCompatActivity {
             }
         });
 
-        //Calculate Button
-        calculateBill.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-        }
-    });
 
         //Clear fields button
         clear.setOnClickListener(new View.OnClickListener() {
