@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,16 +23,22 @@ public class NewBillActivity extends AppCompatActivity {
         final EditText tipAmount = findViewById(R.id.txtTipAmount);
         final TextView totalBill = findViewById(R.id.txtTotalBill);
         final SeekBar tipBar = findViewById(R.id.skbTipBar);
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
+
+        tipPercentage.setFocusable(false);
+        tipAmount.setFocusable(false);
+        totalBill.setFocusable(false);
 
         Button saveBill = findViewById(R.id.btnSaveBill);
         Button calculateBill = findViewById(R.id.btnCalculateBill);
         Button clear = findViewById(R.id.btnClear);
 
-        //Displaying tipBar value
+        //***START*** --- Displaying tipBar value
         tipBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-
+            public void onProgressChanged(SeekBar seekBar, int percentage, boolean fromUser) {
+                progressBar.setProgress(percentage);
+                tipPercentage.setText("" + percentage + "%");
             }
 
             @Override
@@ -44,6 +51,7 @@ public class NewBillActivity extends AppCompatActivity {
 
             }
         });
+        //***END***
 
         //Calculate Button
         calculateBill.setOnClickListener(new View.OnClickListener() {

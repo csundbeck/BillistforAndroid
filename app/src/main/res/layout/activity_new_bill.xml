@@ -30,10 +30,10 @@
     <SeekBar
         android:id="@+id/skbTipBar"
         android:layout_width="300dp"
-        android:layout_height="47dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="48dp"
         android:background="#9b59b6"
         android:clickable="false"
         android:scrollbars="horizontal"
@@ -49,7 +49,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Tip Percentage (%)"
         android:inputType="numberDecimal"
@@ -58,7 +58,7 @@
         android:textColorHint="#bdc3c7"
         android:textColorLink="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBillAmount" />
 
@@ -68,7 +68,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Bill Amount ($)"
         android:inputType="numberDecimal"
@@ -77,6 +77,7 @@
         android:textColorHint="#bdc3c7"
         android:textColorLink="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRestaurantName" />
 
@@ -86,7 +87,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="Tip Amount ($)"
         android:inputType="numberDecimal"
@@ -95,7 +96,7 @@
         android:textColorHint="#bdc3c7"
         android:textColorLink="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skbTipBar" />
 
@@ -106,19 +107,22 @@
         android:layout_marginBottom="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="#8e44ad"
         android:text="Save Bill"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculateBill"
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/btnCalculateBill"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="144dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#8e44ad"
@@ -126,6 +130,7 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -135,13 +140,16 @@
         android:layout_marginBottom="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="#8e44ad"
         android:text="Clear"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculateBill"
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/txtTotalBill"
@@ -153,7 +161,7 @@
         android:layout_marginTop="20dp"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="32sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnCalculateBill"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,4 +169,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTipAmount"
         app:layout_constraintVertical_bias="0.269" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/skbTipBar"
+        app:layout_constraintEnd_toEndOf="@+id/skbTipBar"
+        app:layout_constraintStart_toStartOf="@+id/skbTipBar"
+        app:layout_constraintTop_toTopOf="@+id/skbTipBar" />
 </android.support.constraint.ConstraintLayout>
