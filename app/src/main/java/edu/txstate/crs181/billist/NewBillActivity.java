@@ -10,6 +10,8 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class NewBillActivity extends AppCompatActivity {
 
     @Override
@@ -38,7 +40,7 @@ public class NewBillActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int percentage, boolean fromUser) {
                 progressBar.setProgress(percentage);
-                tipPercentage.setText("" + percentage + "%");
+                tipPercentage.setText("" + percentage);
             }
 
             @Override
@@ -57,6 +59,24 @@ public class NewBillActivity extends AppCompatActivity {
         calculateBill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String strBillAmount = billAmount.getText().toString();
+                double dblBillAmount = Double.parseDouble(strBillAmount);
+
+                String strTipPercentage = tipPercentage.getText().toString();
+                double dblTipPercentage = Double.parseDouble(strTipPercentage);
+
+                double dblTipAmount = dblBillAmount * (dblTipPercentage/100);
+
+                double dblTotalBill = dblTipAmount + dblBillAmount;
+
+                DecimalFormat moneyFormat = new DecimalFormat("$#,###.##");
+                String strTotalBill = moneyFormat.format(dblTotalBill);
+                String strTipAmount = moneyFormat.format(dblTipAmount);
+
+                tipAmount.setText(strTipAmount);
+                totalBill.setText(strTotalBill);
+
 
             }
         });
