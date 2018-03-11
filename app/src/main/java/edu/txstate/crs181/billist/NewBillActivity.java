@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class NewBillActivity extends AppCompatActivity {
 
@@ -70,7 +71,7 @@ public class NewBillActivity extends AppCompatActivity {
 
                 double dblTotalBill = dblTipAmount + dblBillAmount;
 
-                DecimalFormat moneyFormat = new DecimalFormat("$#,###.##");
+                NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
                 String strTotalBill = moneyFormat.format(dblTotalBill);
                 String strTipAmount = moneyFormat.format(dblTipAmount);
 
